@@ -1,0 +1,22 @@
+[
+  {
+      "imgName" : "Pic1",
+      "imgPath" : "img/word.jpg"
+   },
+   {
+      "imgName" : "Pic2",
+      "imgPath" : "img/word.jpg"
+   },
+   {
+      "imgName" : "Pic3",
+      "imgPath" : "img/word.jpg"
+   },
+   {
+      "imgName" : "Pic4",
+      "imgPath" : "img/word.jpg"
+   },
+   {
+      "imgName" : "Pic5",
+      "imgPath" : "img/word.jpg"
+   }
+]
