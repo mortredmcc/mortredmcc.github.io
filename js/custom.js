@@ -7,7 +7,6 @@ $(document).ready(function(){
 	    $('#brand').focus();
 	  });
 
-	  $("#owl-example").owlCarousel();
 	  console.log("end.");
 });
 

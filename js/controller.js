@@ -12,6 +12,14 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope) {
 	$http.get(url).success( function(response) {
       $scope.slides = response; 
    });
+
+	$("#owl-demo").owlCarousel({
+	    items : 2,
+	    autoPlay: true,
+	    lazyLoad : true,
+	    navigation : true
+	  });
+
 })
 .controller('ContactUsCtrl', function($scope, $http){
 	$scope.greeting = "Contact US : greetings friend";
