@@ -14,11 +14,12 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope) {
    });*/
 
 	$("#owl-demo").owlCarousel({
-	    items : 2,
+	    items : 3,
 	    autoPlay: true,
 	    lazyLoad : true,
-	    navigation : true
 	  });
+
+	  // navigation : true
 
 })
 .controller('ContactUsCtrl', function($scope, $http){
