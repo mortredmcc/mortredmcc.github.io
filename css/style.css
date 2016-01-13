@@ -2,7 +2,7 @@ body{
 	font-family: 'Poiret One', cursive;
 	font-weight: bold;
 }
-.breadcrumb li:first-child{
+/*.breadcrumb li:first-child{
 	margin-left: 23px;
 } 
 .breadcrumb{
@@ -11,7 +11,7 @@ body{
 	padding: 0px;
 	background-color: #FFF;
 	margin-left: 189px;
-} 
+} */
 
 a.active{
     color: #777;
@@ -58,8 +58,8 @@ a{
 .text-main-home{
 	text-align: center;
 	color: #333; 
-	margin-top: 40px;
 }
+
 .test{
 	border-top: 1px solid rgb(238, 238, 238);
 	margin-top: 32px;
@@ -69,6 +69,8 @@ a{
 
 .txt-title{
 	text-shadow: 4px 4px rgb(238, 238, 238);
+	margin-right: 30px;
+	margin-top: 9px;
 }
 
 .sub-title{
@@ -88,6 +90,11 @@ a{
   display: block;
   width: 100%;
   height: auto;
+}
+
+.navbar-default{
+	background-color: #fff;
+	border-color: #fff;
 }
 
 
