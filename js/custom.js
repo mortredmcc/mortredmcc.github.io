@@ -1,12 +1,16 @@
 $(document).ready(function(){
 
-	 $("#mainMenu li a").click(function(){
-	    $("#mainMenu li a").removeClass('active');
-	    $(this).addClass('active');
-	    $(this).css('text-decoration','none');
-	    $('#brand').focus();
-	  });
+	// $("#mainMenu li").click(function(){
+	// 	$("#mainMenu li").removeClass('activeC');
+	// 	$(this).addClass('activeC');
+	// 	$(this).css('outline','0');    
+	// });
 
-	  console.log("end.");
+	$("#mainMenu li a").click(function(){
+		$("#mainMenu li a").removeClass('activeC');
+		$(this).addClass('activeC');
+		$(this).css('outline','0');
+		return; 
+	});
 });
 

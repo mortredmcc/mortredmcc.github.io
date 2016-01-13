@@ -5,13 +5,13 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope) {
 })
 .controller('ProductCtrl', function($scope, $http){
 	$scope.greeting = "Product : greetings friend";
-	$scope.myInterval = 4000;
+	/*$scope.myInterval = 4000;
 	$scope.noWrapSlides = false;
 	var slides = $scope.slides = [];
 	var url = 'data/img.json';
 	$http.get(url).success( function(response) {
       $scope.slides = response; 
-   });
+   });*/
 
 	$("#owl-demo").owlCarousel({
 	    items : 2,

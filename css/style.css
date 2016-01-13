@@ -97,6 +97,15 @@ a{
 	border-color: #fff;
 }
 
+li.activeC, a.activeC, .activeC{
+	/*background-color: rgba(233, 42, 42, 0.2);*/
+	color: rgb(233, 42, 42) !important;
+}
+
+.nav > .activeC > a, .nav > .activeC > a:hover, .nav > .activeC > a:focus { 
+outline: 0 !important;
+}
+
 
 
 
