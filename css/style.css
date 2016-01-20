@@ -133,7 +133,8 @@ outline: 0 !important;
 }
 
 #gmap_canvas img{
-	max-width:none!important;background:none!important
+	max-width:none!important;
+	background:none!important
 }
 
 
