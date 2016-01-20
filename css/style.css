@@ -132,6 +132,10 @@ outline: 0 !important;
 	color:#e92a2a;
 }
 
+#gmap_canvas img{
+	max-width:none!important;background:none!important
+}
+
 
 
 
