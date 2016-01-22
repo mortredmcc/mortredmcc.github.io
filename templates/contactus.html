@@ -1,12 +1,11 @@
-</br>
-</br>
 <div class="container">
+	<!-- <h3 class="hightlight-txt"><b>แผนที่</b></h3>  -->
 	<div class="container-fluid">
 		<!-- <div id="map" style="margin: 0px auto; display: block; text-align:center">
 			<iframe width="750" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.th/maps/ms?msa=0&amp;msid=205184476335962270114.0004f6d285fd414fb8dcd&amp;hl=en&amp;ie=UTF8&amp;ll=13.786476,100.66644&amp;spn=0,0&amp;t=m&amp;output=embed"></iframe><br /> <a href="https://maps.google.co.th/maps/ms?msa=0&amp;msid=205184476335962270114.0004f6d285fd414fb8dcd&amp;hl=en&amp;ie=UTF8&amp;ll=13.786476,100.66644&amp;spn=0,0&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left"></a>
 		</div> -->
-		<div style='overflow:hidden;height:500px;width:750px;margin: 0 auto'>
-			<div id='gmap_canvas' style='height:500px;width:750px;'></div>
+		<div style='overflow:hidden;height: 400px; width: 650px;margin: 0 auto'>
+			<div id='gmap_canvas' style='height: 400px; width: 650px;'></div>
 		</div>
 	</div>
 
@@ -24,7 +23,7 @@
 	</div>
 
 
-	<div class="row" style="text-align:center">
+	<div class="row follow-me">
 		<a class="a-img-contactus" href="https://www.facebook.com/dorgkum.granite" target="_blank"><img src="img/facebook.png" class="img-contactus"></a>
 		<a class="a-img-contactus" href="http://instagram.com/" target="_blank"><img src="img/Instagram.png" class="img-contactus"></a>
 		<a class="a-img-contactus" href="https://twitter.com/MilkybunnyYo" target="_blank"><img src="img/twitter.png" class="img-contactus"></a>
@@ -39,7 +38,8 @@
 	});
 	function init_map(){
 		var myOptions = {
-			zoom:18,center:new google.maps.LatLng(13.786476,100.66644),
+			zoom:16,
+			center:new google.maps.LatLng(13.786476,100.66644),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
