@@ -2,7 +2,8 @@ var dorgkumApp = angular.module('dorgkumApp', [
 	'ngRoute',
   'ui.bootstrap',
   'ngAnimate',
-  'DorgkumCtrl']);
+  'DorgkumCtrl',
+  'DorgkumService']);
 dorgkumApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
