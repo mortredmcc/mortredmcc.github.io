@@ -68,4 +68,8 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 	$scope.initGoogleMap = function(){
 		google.maps.event.addDomListener(window, 'load', $scope.iniMap);
 	};
+})
+
+.controller('Future', function($scope, Lang){
+	$scope.greeting = "Product : greetings friend";
 });
