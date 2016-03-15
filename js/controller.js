@@ -69,7 +69,37 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 		google.maps.event.addDomListener(window, 'load', $scope.iniMap);
 	};
 })
+.controller('FuturePageCtrl', function($scope){
+	$scope.greeting = "Xcu : greetings friend";
+	$scope.myInterval = 5000;
+  	$scope.noWrapSlides = false;
+  	$scope.active = 0;
+  	var slides = $scope.slides = [];
+  	var currIndex = 0;
 
-.controller('Future', function($scope, Lang){
-	$scope.greeting = "Product : greetings friend";
+  	$scope.addSlide = function() {
+  	  var newWidth = 600 + slides.length + 1;
+  	  slides.push({
+  	    image: 'http://lorempixel.com/' + newWidth + '/300',
+   	   text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+ 	     id: currIndex++
+ 	  });
+ 	};
+
+ 	for (var i = 0; i < 4; i++) {
+   	 $scope.addSlide();
+  	}
+})
+.controller('XcuPageCtrl', function($scope){
+	$scope.greetingXcu = "สวัสดีครับ...";
+})
+.controller('TaewPageCtrl', function($scope, $timeout, $interval, RandomColor){
+	var i = 0;
+	var msg = ['Hi', 'My name is Xcu.', 'What is your name', 'Oop!!', 'Taew', 'Goo bye'];
+		$scope.color = '';
+		$interval(function(){
+			$scope.greetingTaew = msg[i%5]
+			$scope.color =  {color:RandomColor.getColor()};
+			i++;
+		}, 2000, 100, true, null);
 });

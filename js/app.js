@@ -19,9 +19,17 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/contactus.html',
         controller: 'ContactUsCtrl'
       }).
-       when('/future', {
+       when('/futurepage', {
         templateUrl: 'templates/futurePage.html',
-        controller: 'FutureCtrl'
+        controller: 'FuturePageCtrl'
+      }).
+       when('/xcu', {
+        templateUrl: 'templates/xcuPage.html',
+        controller: 'XcuPageCtrl'
+      }).
+       when('/taew', {
+        templateUrl: 'templates/taewPage.html',
+        controller: 'TaewPageCtrl'
       }).
       otherwise({
         redirectTo: '/home'
