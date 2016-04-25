@@ -98,6 +98,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 	var i = 0;
 	var msg = ['Hi', 'My name is Xcu.', 'What is your name', 'Oop!!', 'Taew', 'Goo bye'];
 	$scope.color = '';
+
 	$interval(function(){
 		$scope.greetingTaew = msg[i%5];
 		$scope.color =  {'color':RandomColor.getColor()};
@@ -108,7 +109,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 		$scope.bgcolor5 =  {'background-color':RandomColor.getColor()};
 		$scope.bgcolor6 =  {'background-color':RandomColor.getColor()};
 		i++;
-	}, 2000, 100, false, null);
+	}, 2000, 100, true, null);
 	
 	$scope.mouseD = function(ele){
 		$scope.imgPath = "img/unnamed.jpg";
