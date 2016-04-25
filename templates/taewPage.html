@@ -6,12 +6,38 @@
 			<span class="hightlight-txt">D</span>ay
 		</h1>
 	</center>
+	<div class="row">
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor1>
+			
+		</div>
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor2>
+			
+		</div>
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor3>
+			
+		</div>
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor4>
+			
+		</div>
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor5>
+			
+		</div>
+		<div class="h10 col-md-2 col-xs-2" ng-style=bgcolor6>
+			
+		</div>
+	</div>
 
 	<div class="row text-center">
-		<img src="img/happy-birthday-round-cake.jpg" width="50%">
+		<img ng-mousedown="mouseD($this)" ng-mouseup="mouseU()" ng-src="{{imgPath}}" width="40%"/>
 	</div>
 	
    	<h3 class="text-center" ng-style=color>{{greetingTaew}}</h3>
-	
-	<iframe width="90%" height="70%" src="https://www.youtube.com/embed/ToASX6axGuw?rel=0&amp;autoplay " frameborder="0" allowfullscreen></iframe>
+
+	<div class="hidden-sm text-center">
+			<iframe id="ytplayer" type="text/html" width="320" height="195"
+  src="http://www.youtube.com/embed/ToASX6axGuw?autoplay=1&origin=http://example.com"
+  frameborder="0"/>
+	</div>
+
+	<div id="player"></div>
 </div>

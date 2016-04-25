@@ -163,5 +163,17 @@ outline: 0 !important;
 	text-align: right;
 }
 
+.h10{
+	height: 15px;
+}
+
+.fade {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:50%;
+  left: 50%;
+}
+
 
 
