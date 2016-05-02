@@ -35,10 +35,21 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
   	};*/
 
 	$("#owl-demo").owlCarousel({
-	    items : 3,
+		animateOut: 'fadeOut',
+	    items : 1,
 	    autoPlay: true,
-	    lazyLoad : true,
 	  });
+
+	$('.owl-carousel').owlCarousel({
+	    animateOut: 'zoomOut',
+	    animateIn: 'zoomIn',
+	    autoPlay: 4000,
+	    nav:true,
+	    items:1,
+	    margin:30,
+	    stagePadding:30,
+	    smartSpeed:800
+	});
 })
 .controller('ContactUsCtrl', function($scope, $http, Lang){
 	$scope.greeting = "Contact US : greetings friend";
@@ -95,12 +106,13 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 })
 .controller('TaewPageCtrl', function($scope, $timeout, $interval, $animate, RandomColor){
 	$scope.imgPath = "img/happy-birthday-round-cake.jpg";
+	$('#mainTaew').addClass('hide');
 	var i = 0;
-	var msg = ['Hi', 'My name is Xcu.', 'What is your name', 'Oop!!', 'Taew', 'Goo bye'];
+	var msg = ['สวัสดีแต้ว', 'สุขสันต์วันคล้ายวันเกิดนะ', 'ขอให้สุขภาพแข็งแรง', 'อย่าเจ็บ อย่าทน  เอ้ย!!! อย่าจน', 'คิด หวัง อะไร ขอให้เป็นดั่งหวัง', 'ดูแลตัวเองดี ๆ ', 'ขับรถดี ๆ', 'เอาไว้ จะหาโอกาสไปเลี้ยงข้าวคืนนะ', 'คิดถึงจร้า บาย'];
 	$scope.color = '';
 
 	$interval(function(){
-		$scope.greetingTaew = msg[i%5];
+		$scope.greetingTaew = msg[i%9];
 		$scope.color =  {'color':RandomColor.getColor()};
 		$scope.bgcolor1 =  {'background-color':RandomColor.getColor()};
 		$scope.bgcolor2 =  {'background-color':RandomColor.getColor()};
@@ -112,12 +124,22 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 	}, 2000, 100, true, null);
 	
 	$scope.mouseD = function(ele){
-		$scope.imgPath = "img/unnamed.jpg";
-		$scope.imgPath.$apply;
-  	};
-
-  	$scope.mouseU = function(){
-		$scope.imgPath = "img/happy-birthday-round-cake.jpg";
-		$scope.imgPath.$apply;
+		$('#cakeTaew').addClass('hide');
+		console.log('Click!!!');
+		$("#owl-demo").owlCarousel({
+		   jsonPath : "data/taew.json",
+		   jsonSuccess :  function(data){
+				    var content = "";
+				    for(var i in data["items"]){
+				       
+				       var img = data["items"][i].img;
+				       var alt = data["items"][i].alt;
+				 
+				       content += "<img src=\"" +img+ "\" alt=\"" +alt+ "\">"
+				    }
+				    console.log('content : '+content);
+			    $("#owl-demo").html(content);
+			  }
+		});
   	};
 });
