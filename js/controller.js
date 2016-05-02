@@ -131,7 +131,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 		$scope.bgcolor5 =  {'background-color':RandomColor.getColor()};
 		$scope.bgcolor6 =  {'background-color':RandomColor.getColor()};
 		i++;
-	}, 2000, 9, true, null);
+	}, 2000, 18, true, null);
 	
 	$scope.mouseD = function(ele){
 		$scope.imgPath = "img/un.jpg";
