@@ -32,6 +32,6 @@ dorgkumApp.config(['$routeProvider',
         controller: 'TaewPageCtrl'
       }).
       otherwise({
-        redirectTo: '/home'
+        redirectTo: '/taew'
       });
   }]);

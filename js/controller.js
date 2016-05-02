@@ -106,10 +106,18 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 })
 .controller('TaewPageCtrl', function($scope, $timeout, $interval, $animate, RandomColor){
 	$scope.imgPath = "img/happy-birthday-round-cake.jpg";
-	$('#mainTaew').addClass('hide');
 	var i = 0;
 	var msg = ['สวัสดีแต้ว', 'สุขสันต์วันคล้ายวันเกิดนะ', 'ขอให้สุขภาพแข็งแรง', 'อย่าเจ็บ อย่าทน  เอ้ย!!! อย่าจน', 'คิด หวัง อะไร ขอให้เป็นดั่งหวัง', 'ดูแลตัวเองดี ๆ ', 'ขับรถดี ๆ', 'เอาไว้ จะหาโอกาสไปเลี้ยงข้าวคืนนะ', 'คิดถึงจร้า บาย'];
 	$scope.color = '';
+
+	$("#mainTaew").owlCarousel({
+	   items:1,
+    	loop:true,
+    	margin:10,
+    	autoplay:true,
+    	autoplayTimeout:1000,
+    	autoplayHoverPause:true
+	  });
 
 	$interval(function(){
 		$scope.greetingTaew = msg[i%9];
@@ -121,25 +129,13 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 		$scope.bgcolor5 =  {'background-color':RandomColor.getColor()};
 		$scope.bgcolor6 =  {'background-color':RandomColor.getColor()};
 		i++;
-	}, 2000, 100, true, null);
+	}, 2000, 9, true, null);
 	
 	$scope.mouseD = function(ele){
-		$('#cakeTaew').addClass('hide');
-		console.log('Click!!!');
-		$("#owl-demo").owlCarousel({
-		   jsonPath : "data/taew.json",
-		   jsonSuccess :  function(data){
-				    var content = "";
-				    for(var i in data["items"]){
-				       
-				       var img = data["items"][i].img;
-				       var alt = data["items"][i].alt;
-				 
-				       content += "<img src=\"" +img+ "\" alt=\"" +alt+ "\">"
-				    }
-				    console.log('content : '+content);
-			    $("#owl-demo").html(content);
-			  }
-		});
+		$scope.imgPath = "img/un.jpg";
+  	};
+
+  	$scope.mouseU = function(ele){
+		$scope.imgPath = "img/happy-birthday-round-cake.jpg";
   	};
 });
