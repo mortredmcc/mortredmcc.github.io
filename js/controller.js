@@ -115,7 +115,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
     	loop:true,
     	margin:10,
     	autoplay:true,
-    	autoplayTimeout:1000,
+    	autoplayTimeout:1500,
     	autoplayHoverPause:true
 	  });
 
