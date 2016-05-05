@@ -103,41 +103,4 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 })
 .controller('XcuPageCtrl', function($scope){
 	$scope.greetingXcu = "สวัสดีครับ...";
-})
-.controller('TaewPageCtrl', function($scope, $timeout, $interval, $animate, RandomColor){
-	$scope.imgPath = "img/happy-birthday-round-cake.jpg";
-	var i = 0;
-	var msg = ['สวัสดีแต้ว', 'สุขสันต์วันคล้ายวันเกิดนะ', 'ขอให้สุขภาพแข็งแรง', 'อย่าเจ็บ อย่าทน  เอ้ย!!! อย่าจน', 'คิด หวัง อะไร ขอให้เป็นดั่งหวัง', 'ดูแลตัวเองดี ๆ ', 'ขับรถดี ๆ', 'เอาไว้ จะหาโอกาสไปเลี้ยงข้าวคืนนะ', 'คิดถึงจร้า บาย'];
-	$scope.color = '';
-
-	$("#mainTaew").owlCarousel({
-	   items:1,
-    	loop:true,
-    	margin:10,
-    	lazyLoad:true,
-    	loop:true,
-    	autoplay:true,
-    	autoplayTimeout:1500,
-    	autoplayHoverPause:true
-	  });
-
-	$interval(function(){
-		$scope.greetingTaew = msg[i%9];
-		$scope.color =  {'color':RandomColor.getColor()};
-		$scope.bgcolor1 =  {'background-color':RandomColor.getColor()};
-		$scope.bgcolor2 =  {'background-color':RandomColor.getColor()};
-		$scope.bgcolor3 =  {'background-color':RandomColor.getColor()};
-		$scope.bgcolor4 =  {'background-color':RandomColor.getColor()};
-		$scope.bgcolor5 =  {'background-color':RandomColor.getColor()};
-		$scope.bgcolor6 =  {'background-color':RandomColor.getColor()};
-		i++;
-	}, 2000, 18, true, null);
-	
-	$scope.mouseD = function(ele){
-		$scope.imgPath = "img/un.jpg";
-  	};
-
-  	$scope.mouseU = function(ele){
-		$scope.imgPath = "img/happy-birthday-round-cake.jpg";
-  	};
 });

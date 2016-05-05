@@ -27,10 +27,6 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/xcuPage.html',
         controller: 'XcuPageCtrl'
       }).
-       when('/taew', {
-        templateUrl: 'templates/taewPage.html',
-        controller: 'TaewPageCtrl'
-      }).
       otherwise({
         redirectTo: '/taew'
       });
