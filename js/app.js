@@ -28,6 +28,6 @@ dorgkumApp.config(['$routeProvider',
         controller: 'XcuPageCtrl'
       }).
       otherwise({
-        redirectTo: '/taew'
+        redirectTo: '/home'
       });
   }]);
