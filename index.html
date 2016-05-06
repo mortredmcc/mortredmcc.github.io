@@ -32,8 +32,7 @@
 
   </head>
   <body>
-    <div class="maximumHead border-bottom-only-animate">
-      <div class="container" style="margin-bottom: -12px;"> 
+      <div class="container" style="margin-bottom: -12px;">  
         <nav class="navbar navbar-default">
           <div class="container-fluid">
 
@@ -56,16 +55,16 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul id="mainMenu" class="nav navbar-nav">
-                <li ><a id="home" href="#/home" class="activeC"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
-                <li><a href="#/product"><span class="glyphicon glyphicon-glass"></span>&nbsp;Who Am I</a></li>
-                <li><a id="contactUs" href="#/contactus"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Contact Me</a></li>
-                 <li><a id="xcu" href="#/xcu"><span class="glyphicon glyphicon-flash"></span>&nbsp;My Every Think</a></li>
+                <li data-toggle="collapse"><a id="home" href="#/home" class="activeC"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                <li data-toggle="collapse"><a href="#/product"><span class="glyphicon glyphicon-glass"></span>&nbsp;Who Am I</a></li>
+                <li data-toggle="collapse"><a id="contactUs" href="#/contactus"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Contact Me</a></li>
+                 <li data-toggle="collapse"><a id="xcu" href="#/xcu"><span class="glyphicon glyphicon-flash"></span>&nbsp;My Every Think</a></li>
               </ul>
             </div>      
           </div>
         </nav>
-      </div>
-    </div>
+     </div>
+   <!--   </div> -->
   <div ng-view></div>
     
   <footer class="footer">
