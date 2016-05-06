@@ -1,5 +1,6 @@
 var dorgkumApp = angular.module('dorgkumApp', [
 	'ngRoute',
+  'ngTouch',
   'ui.bootstrap',
   'ngAnimate',
   'DorgkumCtrl',

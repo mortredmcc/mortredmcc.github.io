@@ -1,6 +1,6 @@
 var DorgkumCtrl = angular.module('DorgkumCtrl', []);
 
-DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
+DorgkumCtrl.controller('HomeCtrl', function ($scope, $state, Lang) {
   	$scope.greeting = '';
   	$scope.Objlang = Lang;
   	$scope.currLang = '';
@@ -23,6 +23,11 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
   		console.log('lang' + lang);
   		/*$scope.Objlang.setLang(lang);
   		console.log($scope.Objlang.getLang();*/
+  	};
+
+  	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		 $state.go("/xcu"); 
   	};
 
 })
