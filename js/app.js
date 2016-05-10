@@ -32,3 +32,9 @@ dorgkumApp.config(['$routeProvider',
         redirectTo: '/home'
       });
   }]);
+
+dorgkumApp.filter('newlines', function () {
+  return function(text) {
+    return text.replace(/(&#13;)?&#10;/g, '<br/>');
+  }
+});

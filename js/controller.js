@@ -1,6 +1,6 @@
 var DorgkumCtrl = angular.module('DorgkumCtrl', []);
 
-DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, Lang) {
+DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, $http, Lang) {
   	$scope.greeting = '';
   	$scope.Objlang = Lang;
   	$scope.currLang = '';
@@ -34,6 +34,15 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 		$('#' + nextPageName).css('outline','0');
   		$location.path(nextPageName);
   	};
+
+    $http.get("data/home.json")
+    .then(function(response) {
+      console.log('response=' + response.data.info[0].text);
+      $scope.content = response.data.info[0].text;
+        // $scope.content = response.GetAllCustomersResult.CompanyName;
+        // $scope.statuscode = response.GetAllCustomersResult.CustomerID;
+        // console.log('Data : ' + $scope.content + $scope.statuscode);
+    });
 
 })
 .controller('WhoamiCtrl', function($scope, $http, $location, Lang){

@@ -198,7 +198,7 @@ outline: 0 !important;
 .bg-main {
     /*background-image: -webkit-radial-gradient(circle,#EBF2FA, #AFD4FA,#EBF2FA);*/
     background-image: -webkit-linear-gradient(184deg, #AFD4FA, #EBF2FA, #AFD4FA);
-    -webkit-animation: hue 60s infinite linear;
+    /*-webkit-animation: hue 60s infinite linear;*/
 }
 
 .head-style{
