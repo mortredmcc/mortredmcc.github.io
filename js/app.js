@@ -12,9 +12,9 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
       }).
-      when('/product', {
-        templateUrl: 'templates/product.html',
-        controller: 'ProductCtrl'
+      when('/whoami', {
+        templateUrl: 'templates/whoami.html',
+        controller: 'WhoamiCtrl'
       }).
        when('/contactus', {
         templateUrl: 'templates/contactus.html',

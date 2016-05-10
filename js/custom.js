@@ -2,6 +2,8 @@ $(document).ready(function(){
 	$("#langEn").css('width', '15%');
 	$("#langTh").css('width', '10%');
 
+	console.log('Path=' + window.location.path)
+
 	$('#brand').click(function(){
 		console.log('click');
 		$("#mainMenu li a").removeClass('activeC');

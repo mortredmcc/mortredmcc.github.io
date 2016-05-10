@@ -1,9 +1,11 @@
 var DorgkumCtrl = angular.module('DorgkumCtrl', []);
 
-DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
+DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, Lang) {
   	$scope.greeting = '';
   	$scope.Objlang = Lang;
   	$scope.currLang = '';
+
+  	console.log('Paht=' + $location.path());
 
   	$("#langEn").click(function(){
 		$("#langEn").css('width', '15%');
@@ -25,14 +27,17 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
   		console.log($scope.Objlang.getLang();*/
   	};
 
-  	// $scope.gotoNextPage = function(nextPageName){
-  	// 	console.log('gotoNextPage name :: ' + nextPageName);
-  	// 	 $state.go("/xcu"); 
-  	// };
+  	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		$("#mainMenu li a").removeClass('activeC animated zoomIn');
+  		$('#' + nextPageName).addClass('activeC animated zoomIn');
+		$('#' + nextPageName).css('outline','0');
+  		$location.path(nextPageName);
+  	};
 
 })
-.controller('ProductCtrl', function($scope, $http, Lang){
-	$scope.greeting = "Product : greetings friend";
+.controller('WhoamiCtrl', function($scope, $http, $location, Lang){
+	$scope.greeting = "WhoamiCtrl : greetings friend";
 
 	/*$scope.switchLang = function(lang){
   		Lang.setLang(lang);
@@ -55,37 +60,27 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
 	    stagePadding:30,
 	    smartSpeed:800
 	});
+
+	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		$("#mainMenu li a").removeClass('activeC animated zoomIn');
+  		$('#' + nextPageName).addClass('activeC animated zoomIn');
+		$('#' + nextPageName).css('outline','0');
+  		$location.path(nextPageName);
+  	};
 })
-.controller('ContactUsCtrl', function($scope, $http, Lang){
+.controller('ContactUsCtrl', function($scope, $http, $location,Lang){
 	$scope.greeting = "Contact US : greetings friend";
 
-	/*$scope.switchLang = function(lang){
-  		Lang.setLang(lang);
-  		console.log(Lang.getLang();
-  	};*/
-
-	$scope.iniMap = function(){
-		var myOptions = {
-			zoom:18,center:new google.maps.LatLng(13.786476,100.66644),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-		marker = new google.maps.Marker({
-			map: map,position: new google.maps.LatLng(13.786476,100.66644)
-		});
-		infowindow = new google.maps.InfoWindow({
-			content:'<strong>Dorgkum</strong><br>Serithai<br>10240 Bangkok<br>'
-		});
-		google.maps.event.addListener(marker, 'click', function(){
-			infowindow.open(map,marker);
-		});
-	};
-
-	$scope.initGoogleMap = function(){
-		google.maps.event.addDomListener(window, 'load', $scope.iniMap);
-	};
+	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		$("#mainMenu li a").removeClass('activeC animated zoomIn');
+  		$('#' + nextPageName).addClass('activeC animated zoomIn');
+		$('#' + nextPageName).css('outline','0');
+  		$location.path(nextPageName);
+  	};
 })
-.controller('FuturePageCtrl', function($scope){
+.controller('FuturePageCtrl', function($scope, $location){
 	$scope.greeting = "Xcu : greetings friend";
 	$scope.myInterval = 5000;
   	$scope.noWrapSlides = false;
@@ -105,7 +100,23 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, Lang) {
  	for (var i = 0; i < 4; i++) {
    	 $scope.addSlide();
   	}
+
+  	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		$("#mainMenu li a").removeClass('activeC animated zoomIn');
+  		$('#' + nextPageName).addClass('activeC animated zoomIn');
+		$('#' + nextPageName).css('outline','0');
+  		$location.path(nextPageName);
+  	};
 })
-.controller('XcuPageCtrl', function($scope){
+.controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "สวัสดีครับ...";
+
+	$scope.gotoNextPage = function(nextPageName){
+  		console.log('gotoNextPage name :: ' + nextPageName);
+  		$("#mainMenu li a").removeClass('activeC animated zoomIn');
+  		$('#' + nextPageName).addClass('activeC animated zoomIn');
+		$('#' + nextPageName).css('outline','0');
+  		$location.path(nextPageName);
+  	};
 });
