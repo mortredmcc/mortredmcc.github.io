@@ -1,5 +1,4 @@
 var DorgkumService = angular.module('DorgkumService', []);
-
 DorgkumService.factory('Lang', function () {
 
     var data = {

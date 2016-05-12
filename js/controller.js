@@ -35,14 +35,41 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   		$location.path(nextPageName);
   	};
 
-    $http.get("data/home.json")
-    .then(function(response) {
-      console.log('response=' + response.data.info[0].text);
-      $scope.content = response.data.info[0].text;
-        // $scope.content = response.GetAllCustomersResult.CompanyName;
-        // $scope.statuscode = response.GetAllCustomersResult.CustomerID;
-        // console.log('Data : ' + $scope.content + $scope.statuscode);
-    });
+ // <div class="item">
+ //    <img class="animated flash" src="img/badsmile.png">
+ //    <h4 id="content" class="line-height4"></h4>
+ //  </div>
+ var prefix = '<div class="item"><img class="animated ';
+ var classD = ' infinite" src="';
+ var middlefix = '"><h4 id="content" class="line-height4">';
+ var suffix = '</h4></div>';
+ var content = '';
+
+  $http.get("data/home.json").then(function(response) {
+    angular.forEach(response.data.info, function(value, key) {
+       content += prefix + value.anim + classD + value.img + middlefix + value.text  + suffix;    
+    }, null);
+    $('.owl-carousel').html(content);
+    $('.owl-carousel').owlCarousel({
+      margin:10,
+      lazyLoad: true,
+      navContainer : false,
+      loop:true,
+      items:1
+  });
+
+    console.log("DATA : " + $('.owl-carousel').html());
+    // angular.element('div.owl-carousel').append(content);
+  }, function errorCallback(response) {
+   console.log('Error=' + response);
+  });
+ 
+ /* $('.owl-carousel').owlCarousel({
+      margin:10,
+      lazyLoad: true,
+      loop:true,
+      items:1
+  });*/
 
 })
 .controller('WhoamiCtrl', function($scope, $http, $location, Lang){
