@@ -1,16 +1,12 @@
-body{
-	font-family: 'Ubuntu', sans-serif;
+@font-face {
+    font-family: supermarket;
+    src: url('../fonts/supermarket.woff'),
+         url('../fonts/supermarket.woff');
 }
-/*.breadcrumb li:first-child{
-	margin-left: 23px;
-} 
-.breadcrumb{
-	margin-top: 31px;
-	margin-bottom: 0px;
-	padding: 0px;
-	background-color: #FFF;
-	margin-left: 189px;
-} */
+
+body{
+  font-family: supermarket;
+}
 
 a.active{
     color: #777;
@@ -185,12 +181,13 @@ outline: 0 !important;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 60s infinite linear;
+
+    background-image: linear-gradient(92deg,#f35626,#feab3a);
 }
 
 .bg-main {
-    /*background-image: -webkit-radial-gradient(circle,#EBF2FA, #AFD4FA,#EBF2FA);*/
-    background-image: -webkit-linear-gradient(184deg, #AFD4FA, #EBF2FA, #AFD4FA);
-    /*-webkit-animation: hue 60s infinite linear;*/
+    background-image: -webkit-linear-gradient(184deg, #D4F1FA, #EBF2FA, #D4F1FA);
+    -webkit-animation: hue 60s infinite linear;
 }
 
 .head-style{
@@ -210,27 +207,27 @@ outline: 0 !important;
     animation: hue 60s infinite linear;
 }
 
-.border-animate{
-  border: 2px solid #f35626;
-  -webkit-animation: hue 60s infinite linear;
-  animation: hue 60s infinite linear;
-}
-
-.border-bottom-only-animate{
-  border-bottom: 2px solid #f35626;
-  -webkit-animation: hue 60s infinite linear;
-  animation: hue 60s infinite linear;
-}
-
 .bad-smile{
   color: #e92a2a;
   -webkit-animation: hue 60s infinite linear;
   animation: hue 60s infinite linear;
 }
 
+.butt {
+    border: 1px solid #f35626;
+    line-height: 1.375;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-weight: 700;
+    color: #f35626;
+    cursor: pointer;
+    -webkit-animation: hue 60s infinite linear;
+}
+
 .butt, .input {
-    padding: .75rem;
-    margin: .375rem;
+    padding-top: 1rem;
+    padding-bottom: .75rem;
+    margin: 1.475rem;
     background-color: transparent;
     border-radius: 4px;
 }
@@ -242,8 +239,6 @@ outline: 0 !important;
 .maximumHead{
   max-height: 6rem;
 }
-
-
 
 .view-animate-container {
   position:relative;
@@ -283,16 +278,16 @@ outline: 0 !important;
   left:-100%;
 }
 
-.navbar-default {
-    background-color: rgba(250, 250, 250, 0);
-}
-
-.line-height4{
-  line-height: 4rem;
+.line-height2{
+  line-height: 2rem;
 }
 
 .height55{
   height: 55rem;
+}
+
+.mar-bot2{
+  margin-bottom: 2rem;
 }
 
 .owl-carousel .item {
@@ -313,26 +308,38 @@ outline: 0 !important;
   display: none !important;
 }
 
+.display-inline{
+  display: inline-block;
+}
+
+.navbar-default {
+  background-color: rgba(250, 250, 250, 0);
+  border : none !important;
+}
+
+.font-s2rem{
+  font-size: 2rem;
+  padding: 0px 0px;
+  margin-top: 12px;
+  margin-right: 0px;
+}
+
+.searc-bth{
+    border: 1px solid #999;
+    border-radius: 4px;
+    min-width: 20rem;
+    padding: 8px;
+    font-size: 19px;
+}
+
 @media (min-width: 650px) {
   .mega {
     font-size: 4rem;
     line-height: 1;
     margin-top: 0rem;
+    padding-top: 1rem;
   }
 }
-
-/*@media (min-width: 1200px)
-.container {
-    height: 500px;
-}
-@media (min-width: 992px)
-.container {
-    height: 500px;
-}
-@media (min-width: 768px)
-.container {
-    height: 500px;
-}*/
 
 @-webkit-keyframes hue {
   from {

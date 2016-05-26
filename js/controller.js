@@ -1,24 +1,20 @@
 var DorgkumCtrl = angular.module('DorgkumCtrl', []);
 
-DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, $http, Lang) {
+DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, Lang) {
   	$scope.greeting = '';
   	$scope.Objlang = Lang;
   	$scope.currLang = '';
-
-  	console.log('Paht=' + $location.path());
 
   	$("#langEn").click(function(){
 		$("#langEn").css('width', '15%');
 		$("#langTh").css('width', '10%');
 		$scope.Objlang.setLang('en');
-		console.log('Lang :: ' + $scope.Objlang.getLang());
 	});
 
 	$("#langTh").click(function(){
 		$("#langEn").css('width', '10%');
 		$("#langTh").css('width', '15%');
 		$scope.Objlang.setLang('th');
-		console.log('Lang :: ' + $scope.Objlang.getLang());
 	});
 
   	$scope.switchLang = function(lang){
@@ -34,18 +30,15 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 		$('#' + nextPageName).css('outline','0');
   		$location.path(nextPageName);
   	};
-
- // <div class="item">
- //    <img class="animated flash" src="img/badsmile.png">
- //    <h4 id="content" class="line-height4"></h4>
- //  </div>
- var prefix = '<div class="item"><img class="animated ';
- var classD = ' infinite" src="';
- var middlefix = '"><h4 id="content" class="line-height4">';
- var suffix = '</h4></div>';
- var content = '';
-
-  $http.get("data/home.json").then(function(response) {
+})
+.controller('WhoamiCtrl', function($scope, $http, $location, $http, Lang){
+	$scope.greeting = "WhoamiCtrl : greetings friend";
+  var prefix = '<div class="item"><img class="animated ';
+  var classD = ' infinite" src="';
+  var middlefix = '"><p>';
+  var suffix = '</p></div>';
+  var content = '';
+	$http.get("data/home.json").then(function(response) {
     angular.forEach(response.data.info, function(value, key) {
        content += prefix + value.anim + classD + value.img + middlefix + value.text  + suffix;    
     }, null);
@@ -57,45 +50,17 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
       loop:true,
       items:1
   });
-
-    console.log("DATA : " + $('.owl-carousel').html());
-    // angular.element('div.owl-carousel').append(content);
   }, function errorCallback(response) {
    console.log('Error=' + response);
   });
- 
- /* $('.owl-carousel').owlCarousel({
-      margin:10,
-      lazyLoad: true,
-      loop:true,
-      items:1
-  });*/
 
-})
-.controller('WhoamiCtrl', function($scope, $http, $location, Lang){
-	$scope.greeting = "WhoamiCtrl : greetings friend";
+  // $http.post("https://photos.google.com/photo/AF1QipNuTty9SgrvYkfDovlJlToHUUerQZbzSArhgHS9").then(function(response) {
+  //   console.log('successful');
+  // }, function errorCallback(response) {
+  //  console.log('Error=' + angular.toJson(response, null));
+  // });
 
-	/*$scope.switchLang = function(lang){
-  		Lang.setLang(lang);
-  		console.log(Lang.getLang();
-  	};*/
-
-	$("#owl-demo").owlCarousel({
-		animateOut: 'fadeOut',
-	    items : 1,
-	    autoPlay: true,
-	  });
-
-	$('.owl-carousel').owlCarousel({
-	    animateOut: 'zoomOut',
-	    animateIn: 'zoomIn',
-	    autoPlay: 4000,
-	    nav:true,
-	    items:1,
-	    margin:30,
-	    stagePadding:30,
-	    smartSpeed:800
-	});
+// https://photos.google.com/photo/AF1QipNuTty9SgrvYkfDovlJlToHUUerQZbzSArhgHS9
 
 	$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
