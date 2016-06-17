@@ -175,8 +175,6 @@ outline: 0 !important;
 
 .site__title {
     color: #f35626;
-    /*-moz-animation: hue 60s infinite linear;*/
-    /*background-image: -moz-linear-gradient(92deg,#f35626,#feab3a);*/
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -194,17 +192,6 @@ outline: 0 !important;
 	padding: 0rem;
     margin-bottom: -2rem;
     display: block;
-}
-
-.butt {
-    border: 2px solid #f35626;
-    line-height: 1.375;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-weight: 700;
-    color: #f35626;
-    cursor: pointer;
-    animation: hue 60s infinite linear;
 }
 
 .bad-smile{
