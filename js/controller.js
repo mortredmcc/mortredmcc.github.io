@@ -1,6 +1,6 @@
 var DorgkumCtrl = angular.module('DorgkumCtrl', []);
 
-DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, Lang) {
+DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $location, $interval, Lang) {
   	$scope.greeting = '';
   	$scope.Objlang = Lang;
   	$scope.currLang = '';
@@ -30,6 +30,16 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 		$('#' + nextPageName).css('outline','0');
   		$location.path(nextPageName);
   	};
+
+   var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะ", "หว่า!!! อายุบวกไปอีก 1 ละนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ", "ดื่มให้น้อย ๆ ลงหน่อยนะ", "เห็นแทบทุกวันเลย ^ ^","ออกกำลังกายบา้งนะ", "บ๊ะ บาย"]
+   var counter = 0;
+   var iMax = hbd_txt.length;
+   $interval(function() {
+       $scope.greeting = hbd_txt[counter++]; 
+       if(counter === iMax)
+          counter = 0;
+    }, 1800);
+
 })
 .controller('WhoamiCtrl', function($scope, $http, $location, $http, Lang){
 	$scope.greeting = "WhoamiCtrl : greetings friend";
