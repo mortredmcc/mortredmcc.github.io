@@ -28,8 +28,12 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/xcuPage.html',
         controller: 'XcuPageCtrl'
       }).
+        when('/view', {
+        templateUrl: 'templates/view.html',
+        controller: 'ViewPageCtrl'
+      }).
       otherwise({
-        redirectTo: '/home'
+        redirectTo: '/view'
       });
   }]);
 

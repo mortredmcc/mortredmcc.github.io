@@ -121,13 +121,71 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   	};
 })
 .controller('XcuPageCtrl', function($scope, $location){
-	$scope.greetingXcu = "สวัสดีครับ...";
+	$scope.greetingXcu = "สวัสดี...";
+  $scope.view = "วิว";
 
-	$scope.gotoNextPage = function(nextPageName){
+	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
   		$("#mainMenu li a").removeClass('activeC animated zoomIn');
   		$('#' + nextPageName).addClass('activeC animated zoomIn');
 		$('#' + nextPageName).css('outline','0');
   		$location.path(nextPageName);
-  	};
+  	};*/
+})
+.controller('ViewPageCtrl', function($scope, $interval){
+/* var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะ", "หว่า!!! อายุบวกไปอีก 1 ละนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ", "ดื่มให้น้อย ๆ ลงหน่อยนะ", "เห็นแทบทุกวันเลย ^ ^","ออกกำลังกายบา้งนะ", "บ๊ะ บาย"]
+   var counter = 0;
+   var iMax = hbd_txt.length;
+   $interval(function() {
+       $scope.greeting = hbd_txt[counter++]; 
+       if(counter === iMax)
+          counter = 0;
+    }, 1800);*/
+    
+    $scope.isShow1 = true;
+    $scope.isShow2 = true;
+    $scope.isShow3 = true;
+    $scope.isShow4 = true;
+    $scope.isShow5 = true;
+    $scope.isShow6 = true;
+    $scope.isShow7 = true;
+    $scope.isShow8 = true;
+
+    var allPic = [0, 1, 2, 3, 4, 5, 6, 7];
+
+    $scope.randomShow = function(){
+      console.log('Pic length = ' + allPic.length);
+      var index = randomIntFromInterval(0, allPic.length-1);
+      console.log('Random index = ' + index);
+      if(allPic[index] == 0){
+         $scope.isShow1 = false;
+      }else if(allPic[index] == 1){
+         $scope.isShow2 = false;
+      }else if(allPic[index] == 2){
+         $scope.isShow3 = false;
+      }else if(allPic[index] == 3){
+         $scope.isShow4 = false;
+      }else if(allPic[index] == 4){
+         $scope.isShow5 = false;
+      }else if(allPic[index] == 5){
+         $scope.isShow6 = false;
+      }else if(allPic[index] == 6){
+         $scope.isShow7 = false;
+      }else if(allPic[index] == 7){
+         $scope.isShow8 = false;
+      }
+
+      if(allPic.length > 1){
+        var temp = allPic[allPic.length-1]
+        allPic[allPic.length-1] = allPic[index];
+        allPic[index] = temp;
+        console.log('Data before pop >> ' + allPic.toString());
+        allPic.pop();
+        console.log('Data after pop >> ' + allPic.toString());
+      }
+    };
+
+  function randomIntFromInterval(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+  };
 });

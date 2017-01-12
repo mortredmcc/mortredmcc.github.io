@@ -277,6 +277,30 @@ outline: 0 !important;
   margin-bottom: 2rem;
 }
 
+.view-img{
+  width: 100%;
+}
+
+.view-no-pading{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.view-cl{
+  color: #3265F0;
+}
+
+.view-cl2{
+  color: #CC5AF2;
+}
+
+.view-size{
+  font-size: 10rem;
+}
+
+.greeting-size{
+  font-size: 3rem;
+}
 .owl-carousel .item {
     height: 50rem;
     padding: 1rem;
@@ -337,6 +361,12 @@ outline: 0 !important;
     -webkit-filter: hue-rotate(-360deg);
   }
 }
+
+/*#myView {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+}*/
 
 
 
