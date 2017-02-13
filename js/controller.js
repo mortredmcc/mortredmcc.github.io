@@ -122,7 +122,8 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 })
 .controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "สวัสดี...";
-  $scope.view = "วิว";
+  // $scope.view = "วิว";
+  $scope.view = "ทราย";
 
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
@@ -188,4 +189,20 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   function randomIntFromInterval(min,max){
     return Math.floor(Math.random()*(max-min+1)+min);
   };
+})
+.controller('SandPageCtrl', function ($scope, $route, $routeParams, $location, $interval, Lang) {
+    $scope.greeting = '';
+    $scope.Objlang = Lang;
+    $scope.currLang = '';
+
+
+   var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ", "ออกกำลังกายบา้งนะ", "อย่าทำงานหนักจนเกินไป", "ให้ร่างกายพักบ้าง", "รู้สึกว่าพูดมากไปละ", "บาย"]
+   var counter = 0;
+   var iMax = hbd_txt.length;
+   $interval(function() {
+       $scope.greeting = hbd_txt[counter++]; 
+       if(counter === iMax)
+          counter = 0;
+    }, 1800);
+
 });

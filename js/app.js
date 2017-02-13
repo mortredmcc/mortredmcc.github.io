@@ -32,8 +32,12 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/view.html',
         controller: 'ViewPageCtrl'
       }).
+         when('/sand', {
+        templateUrl: 'templates/sand.html',
+        controller: 'SandPageCtrl'
+      }).
       otherwise({
-        redirectTo: '/view'
+        redirectTo: '/xcu'
       });
   }]);
 

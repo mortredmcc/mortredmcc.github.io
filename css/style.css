@@ -342,6 +342,9 @@ outline: 0 !important;
     padding: 8px;
     font-size: 19px;
 }
+.sand-cake{
+  width: 40%;
+}
 
 @media (min-width: 650px) {
   .mega {
