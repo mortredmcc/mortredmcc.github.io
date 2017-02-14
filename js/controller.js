@@ -121,9 +121,9 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   	};
 })
 .controller('XcuPageCtrl', function($scope, $location){
-	$scope.greetingXcu = "สวัสดี...";
+	$scope.greetingXcu = "Faded to love you";
   // $scope.view = "วิว";
-  $scope.view = "ทราย";
+  $scope.view = "คิมมิยอง";
 
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
