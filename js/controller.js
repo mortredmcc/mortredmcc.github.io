@@ -121,9 +121,9 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   	};
 })
 .controller('XcuPageCtrl', function($scope, $location){
-	$scope.greetingXcu = "Faded to love you";
+	$scope.greetingXcu = "อันยอง";
   // $scope.view = "วิว";
-  $scope.view = "คิมมิยอง";
+  $scope.view = "Fang";
 
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
@@ -197,6 +197,22 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 
 
    var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ", "ออกกำลังกายบา้งนะ", "อย่าทำงานหนักจนเกินไป", "ให้ร่างกายพักบ้าง", "รู้สึกว่าพูดมากไปละ", "บาย"]
+   var counter = 0;
+   var iMax = hbd_txt.length;
+   $interval(function() {
+       $scope.greeting = hbd_txt[counter++]; 
+       if(counter === iMax)
+          counter = 0;
+    }, 1800);
+
+})
+.controller('FangPageCtrl', function ($scope, $route, $routeParams, $location, $interval, Lang) {
+    $scope.greeting = '';
+    $scope.Objlang = Lang;
+    $scope.currLang = '';
+
+
+   var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะฟางงง", "ขอให้มีความสุขมาก ๆ", "ร่างกายแข็งแรง", "ขอให้เจอแต่สิ่งดี ๆ", "มีโอกาสคงได้เจอกันเน๊อะ", "บาย"]
    var counter = 0;
    var iMax = hbd_txt.length;
    $interval(function() {
