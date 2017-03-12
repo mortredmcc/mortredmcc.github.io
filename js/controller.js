@@ -123,7 +123,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 .controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "อันยอง";
   // $scope.view = "วิว";
-  $scope.view = "Fang";
+  $scope.view = "คิมมิยอง ชิ";
 
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
