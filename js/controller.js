@@ -123,7 +123,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 .controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "อันยอง";
   // $scope.view = "วิว";
-  $scope.view = "คิมมิยอง ชิ";
+  $scope.view = "วิว";
 
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
@@ -134,16 +134,17 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
   	};*/
 })
 .controller('ViewPageCtrl', function($scope, $interval){
-/* var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดนะ", "หว่า!!! อายุบวกไปอีก 1 ละนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ", "ดื่มให้น้อย ๆ ลงหน่อยนะ", "เห็นแทบทุกวันเลย ^ ^","ออกกำลังกายบา้งนะ", "บ๊ะ บาย"]
-   var counter = 0;
-   var iMax = hbd_txt.length;
-   $interval(function() {
-       $scope.greeting = hbd_txt[counter++]; 
-       if(counter === iMax)
-          counter = 0;
-    }, 1800);*/
-    
-    $scope.isShow1 = true;
+
+   var hbd_txt = ["อันยอง วิว", "สุขสันต์วันคล้ายวันเกิดนะ", "หว่า!!! อายุบวกไปอีก 1 ละนะ", "ขอให้มีความสุขมาก ๆ", "ดูแลตัวเองดี ๆ","ออกกำลังกายบา้งนะ", "บ๊ะ บาย"]
+       var counter = 0;
+       var iMax = hbd_txt.length;
+       $interval(function() {
+           $scope.greeting = hbd_txt[counter++]; 
+           if(counter === iMax)
+              counter = 0;
+        }, 1800);
+
+    /*$scope.isShow1 = true;
     $scope.isShow2 = true;
     $scope.isShow3 = true;
     $scope.isShow4 = true;
@@ -151,6 +152,8 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
     $scope.isShow6 = true;
     $scope.isShow7 = true;
     $scope.isShow8 = true;
+
+    $scope.allPic = true;
 
     var allPic = [0, 1, 2, 3, 4, 5, 6, 7];
 
@@ -180,15 +183,15 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
         var temp = allPic[allPic.length-1]
         allPic[allPic.length-1] = allPic[index];
         allPic[index] = temp;
-        console.log('Data before pop >> ' + allPic.toString());
         allPic.pop();
-        console.log('Data after pop >> ' + allPic.toString());
+      }else{
+        $scope.allPic = false;
       }
-    };
+    };*/
 
-  function randomIntFromInterval(min,max){
+  /*function randomIntFromInterval(min,max){
     return Math.floor(Math.random()*(max-min+1)+min);
-  };
+  };*/
 })
 .controller('SandPageCtrl', function ($scope, $route, $routeParams, $location, $interval, Lang) {
     $scope.greeting = '';

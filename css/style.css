@@ -346,6 +346,10 @@ outline: 0 !important;
   width: 40%;
 }
 
+.love-view{
+  margin-top: -30%;
+}
+
 @media (min-width: 650px) {
   .mega {
     font-size: 4rem;
