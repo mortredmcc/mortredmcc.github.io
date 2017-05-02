@@ -122,9 +122,27 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 })
 .controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "สวัสดี";
-  // $scope.view = "วิว";
-  $scope.view = "ติ๊ก";
-
+  var isRedirect = false;
+  $scope.txtTaew = ["สวัสดี", "ขอให้ยิ้มแบบนี้", "ขอให้ดีใจแบบนี้", "จับดี ๆ นะ จะพาไปที่อื่น", "บางเวลาขอให้ตลกแบบนี้", "ต้องหัวเราะให้ได้อย่างนี้"];
+  var images = ["victory.png", "big_smile.png", "exciting.png", "girl.png", "grimace.png", "haha.png"];
+  $scope.img= images[0];
+  $scope.changePic = function(){
+     if(isRedirect){
+        $location.path("/taew");
+      }
+     var index = randomIntFromInterval(0, images.length-1);
+     if(images[index] == "girl.png"){
+        isRedirect = true;
+     }else{
+        isRedirect = false;
+     }
+     $scope.img= images[index];
+     $scope.greetingXcu= $scope.txtTaew[index];
+  }
+  
+  function randomIntFromInterval(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+  }
 	/*$scope.gotoNextPage = function(nextPageName){
   		console.log('gotoNextPage name :: ' + nextPageName);
   		$("#mainMenu li a").removeClass('activeC animated zoomIn');
@@ -232,6 +250,22 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 
 
    var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดเด้อ", "ขอให้มีความสุขหลาย ๆ", "ร่างกายแข็งแรง", "ขอให้พ่อแต่แนวดี ๆ", "กลับบ้านจั่งมากินเบียร์ นำกันเด้อ", "ไว้พ่อกัน"]
+   var counter = 0;
+   var iMax = hbd_txt.length;
+   $interval(function() {
+       $scope.greeting = hbd_txt[counter++]; 
+       if(counter === iMax)
+          counter = 0;
+    }, 1800);
+
+})
+.controller('TaewPageCtrl', function ($scope, $route, $routeParams, $location, $interval, Lang) {
+    $scope.greeting = '';
+    $scope.Objlang = Lang;
+    $scope.currLang = '';
+
+
+   var hbd_txt = ["สุขสันต์วันคล้ายวันเกิดจ๊ะ", "ขอให้มีความสุขหลาย ๆ", "ร่างกายแข็งแรง", "ขอให้เจอแต่เจอสิ่งดี ๆ", "โชคดี"]
    var counter = 0;
    var iMax = hbd_txt.length;
    $interval(function() {

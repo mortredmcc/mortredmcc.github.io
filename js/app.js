@@ -44,6 +44,10 @@ dorgkumApp.config(['$routeProvider',
         templateUrl: 'templates/tik.html',
         controller: 'TikPageCtrl'
       }).
+       when('/taew', {
+        templateUrl: 'templates/taew.html',
+        controller: 'TaewPageCtrl'
+      }).
       otherwise({
         redirectTo: '/xcu'
       });
