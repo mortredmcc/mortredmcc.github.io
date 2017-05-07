@@ -123,7 +123,7 @@ DorgkumCtrl.controller('HomeCtrl', function ($scope, $route, $routeParams, $loca
 .controller('XcuPageCtrl', function($scope, $location){
 	$scope.greetingXcu = "สวัสดี";
   var isRedirect = false;
-  $scope.txtTaew = ["สวัสดี", "ขอให้ยิ้มแบบนี้", "ขอให้ดีใจแบบนี้", "จับดี ๆ นะ จะพาไปที่อื่น", "บางเวลาขอให้ตลกแบบนี้", "ต้องหัวเราะให้ได้อย่างนี้"];
+  $scope.txtTaew = "สวัสดี";
   var images = ["victory.png", "big_smile.png", "exciting.png", "girl.png", "grimace.png", "haha.png"];
   $scope.img= images[0];
   $scope.changePic = function(){
